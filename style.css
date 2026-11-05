@@ -1,0 +1,592 @@
+/* ==========================================================================
+   Stephanie Okpe | Portfolio
+   Mobile-first. Breakpoints: 601px (tablet), 1025px (desktop).
+   On desktop every size is "design px x --u", where --u = viewport / 1440,
+   capped at 1px. So the layout matches the 1440px artboard exactly at 1440
+   and scales down proportionally until the tablet breakpoint.
+   ========================================================================== */
+
+/* ---------- 1. TOKENS ---------- */
+:root {
+  /* Colours */
+  --color-bg: #0d0d0d;
+  --color-text: #dcdcfc;
+  --color-accent: #dcdcfc;
+  --color-dark: #0d0d0d;
+  --color-card: #0d0d0d;
+  --color-band: #dcdcfc;
+  --color-sq-pink: #f6ccf6;
+  --color-sq-cyan: #00a9cb;
+  --color-sq-orange: #fc490b;
+  --color-sq-purple: #7d00cb;
+
+  /* Fonts */
+  --font-display: 'IM Fell DW Pica SC', 'Times New Roman', serif;
+  --font-body: 'IM Fell French Canon', Georgia, serif;
+  --font-script: 'Imperial Script', 'Brush Script MT', cursive;
+
+  /* Misc */
+  --ease: cubic-bezier(.22, .8, .24, 1);
+  --radius-square: 0;      /* Figma squares have no radius. Try 4px for rounded. */
+  --radius-portrait: 0;
+
+  /* One design pixel (mobile + tablet use real px) */
+  --u: 1px;
+
+  /* Type (mobile) */
+  --fs-name: clamp(34px, 11.5vw, 56px);
+  --fs-script: clamp(30px, 9vw, 48px);
+  --fs-tagline: clamp(20px, 5.6vw, 28px);
+  --fs-pill: 16px;
+  --fs-h2: clamp(30px, 8.5vw, 44px);
+  --fs-h2-xl: clamp(40px, 13vw, 64px);
+  --fs-title: clamp(26px, 7vw, 36px);
+  --fs-label: 22px;
+  --fs-body: clamp(16px, 4.4vw, 18px);
+  --fs-contact: clamp(18px, 5vw, 26px);
+
+  /* Layout (mobile) */
+  --content-w: calc(100% - 32px);
+  --hero-pt: 48px;  --hero-pb: 40px;  --hero-pl: 16px;  --hero-pr: 16px;
+  --hero-gap: 24px; --pill-gap: 12px;
+  --about-pb: 56px;
+  --band-pt: 40px;  --band-pb: 48px;
+  --group-gap: 56px; --h2-mb-first: 24px; --h2-mb: 24px;
+  --card-pt: 24px;  --card-pr: 20px; --card-pb: 28px; --card-pl: 20px;
+  --card-gap: 20px;
+  --box-radius: 28px;
+  --box-border: 2px;
+  --media-radius: 8px;
+  --gallery-mt: 28px;
+  --label-gap: 12px;
+  --samples-mb: 24px;
+  --footer-pt: 48px; --footer-pb: 56px;
+}
+
+@media (min-width: 601px) {
+  :root {
+    --fs-name: clamp(56px, 10.4vw, 88px);
+    --fs-script: clamp(48px, 8.4vw, 72px);
+    --fs-tagline: clamp(24px, 3.8vw, 34px);
+    --fs-pill: 18px;
+    --fs-h2: clamp(40px, 6vw, 56px);
+    --fs-h2-xl: clamp(64px, 10vw, 96px);
+    --fs-title: clamp(32px, 4.6vw, 42px);
+    --fs-label: 26px;
+    --fs-body: 19px;
+    --fs-contact: clamp(24px, 4.2vw, 34px);
+
+    --content-w: calc(100% - 64px);
+    --hero-pt: 72px; --hero-pb: 56px; --hero-pl: 32px; --hero-pr: 32px;
+    --hero-gap: 32px; --pill-gap: 16px;
+    --about-pb: 72px;
+    --band-pt: 56px; --band-pb: 56px;
+    --group-gap: 64px; --h2-mb-first: 32px; --h2-mb: 32px;
+    --card-pt: 32px; --card-pr: 32px; --card-pb: 40px; --card-pl: 32px;
+    --card-gap: 28px;
+    --box-radius: 36px;
+    --box-border: 3px;
+    --media-radius: 10px;
+    --gallery-mt: 32px;
+    --label-gap: 15px;
+    --samples-mb: 32px;
+    --footer-pt: 56px; --footer-pb: 72px;
+  }
+}
+
+@media (min-width: 1025px) {
+  :root {
+    --u: min(0.0694444vw, 1px);
+
+    --fs-name: clamp(48px, calc(132 * var(--u)), 132px);
+    --fs-script: clamp(40px, calc(105 * var(--u)), 105px);
+    --fs-tagline: clamp(22px, calc(40 * var(--u)), 40px);
+    --fs-pill: clamp(16px, calc(24 * var(--u)), 24px);
+    --fs-h2: clamp(32px, calc(70 * var(--u)), 70px);
+    --fs-h2-xl: clamp(44px, calc(128 * var(--u)), 128px);
+    --fs-title: clamp(28px, calc(50 * var(--u)), 50px);
+    --fs-label: clamp(20px, calc(30 * var(--u)), 30px);
+    --fs-body: clamp(16px, calc(24 * var(--u)), 24px);
+    --fs-contact: clamp(20px, calc(40 * var(--u)), 40px);
+
+    --content-w: calc(1318 * var(--u));
+    --hero-pt: calc(167 * var(--u)); --hero-pb: calc(63 * var(--u));
+    --hero-pl: calc(64 * var(--u));  --hero-pr: calc(58 * var(--u));
+    --hero-gap: calc(50 * var(--u)); --pill-gap: calc(31 * var(--u));
+    --about-pb: calc(105 * var(--u));
+    --band-pt: calc(11 * var(--u));  --band-pb: calc(62 * var(--u));
+    --group-gap: calc(76 * var(--u));
+    --h2-mb-first: calc(44 * var(--u)); --h2-mb: calc(80 * var(--u));
+    --card-pt: calc(36 * var(--u)); --card-pr: calc(39 * var(--u));
+    --card-pb: calc(55 * var(--u)); --card-pl: calc(34 * var(--u));
+    --card-gap: calc(33 * var(--u));
+    --box-radius: calc(50 * var(--u));
+    --box-border: max(2px, calc(3 * var(--u)));
+    --media-radius: calc(10 * var(--u));
+    --gallery-mt: calc(76 * var(--u));
+    --label-gap: calc(15 * var(--u));
+    --samples-mb: calc(50 * var(--u));
+    --footer-pt: calc(73 * var(--u)); --footer-pb: calc(123 * var(--u));
+  }
+}
+
+/* ---------- 2. BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.25;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, p, em, strong { font-weight: 400; margin: 0; }
+em { font-style: italic; }
+ul { list-style: none; margin: 0; padding: 0; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
+.font-display { font-family: var(--font-display); }
+.container { width: var(--content-w); margin-inline: auto; }
+
+/* ---------- 3. SHARED: PLACEHOLDER IMAGES ----------
+   Every image sits in a .ph box with a fixed ratio. If the file is missing,
+   the dashed-stripe placeholder and its path label show instead. */
+.ph {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--media-radius);
+  background: repeating-linear-gradient(135deg, rgb(220 220 252 / .09) 0 12px, rgb(220 220 252 / .03) 12px 24px);
+}
+.ph::before {
+  content: attr(data-label);
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  padding: 8px;
+  text-align: center;
+  font-size: 13px; line-height: 1.3;
+  color: rgb(220 220 252 / .55);
+  overflow-wrap: anywhere;
+}
+.ph > img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .6s var(--ease);
+}
+.ph > img[hidden] { display: none; }
+.ph.is-loaded { background: none; }
+.ph.is-loaded::before { content: none; }
+
+.media { aspect-ratio: var(--ar, 1); width: 100%; }
+@media (hover: hover) {
+  .media:hover > img { transform: scale(1.05); }
+}
+
+/* ---------- 4. SHARED: ACCENT SQUARES ---------- */
+.square {
+  position: absolute;
+  z-index: 3;
+  width: clamp(12px, calc(20 * var(--u)), 20px);
+  aspect-ratio: 1;
+  border-radius: var(--radius-square);
+  animation: float var(--fd, 7s) ease-in-out var(--fdelay, 0s) infinite;
+}
+.square--pink   { background: var(--color-sq-pink);   left: 23.7%; top: 21.3%; }
+.square--cyan   { background: var(--color-sq-cyan);   left: 49.3%; top: 45.4%; }
+.square--orange { background: var(--color-sq-orange); left: 21.3%; top: 83.2%; }
+.square--purple { background: var(--color-sq-purple); left: 35.4%; top: 8.3%; }
+
+@keyframes float {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50%      { transform: translate3d(var(--fx, 6px), var(--fy, -14px), 0) rotate(var(--fr, 8deg)); }
+}
+
+/* ---------- 5. SECTION 1: HERO ---------- */
+.hero__inner {
+  position: relative;
+  width: min(100%, 1440px);
+  margin-inline: auto;
+  padding: var(--hero-pt) var(--hero-pr) var(--hero-pb) var(--hero-pl);
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: var(--hero-gap);
+}
+
+.hero__text { position: relative; z-index: 1; min-width: 0; }
+
+.hero__name {
+  font-family: var(--font-display);
+  font-size: var(--fs-name);
+  line-height: 1;
+}
+.hero__role {
+  font-family: var(--font-script);
+  font-size: var(--fs-script);
+  line-height: 1.457;
+}
+.tags {
+  display: flex; flex-wrap: wrap;
+  gap: var(--pill-gap);
+}
+.tag {
+  padding: clamp(8px, calc(15 * var(--u)), 15px) clamp(14px, calc(20 * var(--u)), 20px);
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-dark);
+  box-shadow: inset 0 0 0 2px var(--color-accent);
+  font-size: var(--fs-pill);
+  line-height: 1.25;
+  cursor: default;
+  transition: background-color .35s var(--ease), color .35s var(--ease), transform .35s var(--ease);
+}
+.tag:hover {
+  background: var(--color-dark);
+  color: var(--color-accent);
+  transform: translateY(-3px);
+}
+.hero__tagline {
+  margin-top: var(--hero-gap);
+  max-width: 771px;
+  font-size: var(--fs-tagline);
+  line-height: 1.375;
+}
+.hero__portrait {
+  z-index: 2;
+  width: min(100%, 538px);
+  justify-self: end;
+  aspect-ratio: 538 / 489;
+  border-radius: var(--radius-portrait);
+}
+
+@media (min-width: 1025px) {
+  .hero__inner { grid-template-columns: 1fr calc(538 * var(--u)); row-gap: 0; }
+  .hero__name { white-space: nowrap; }
+  .hero__tagline { max-width: calc(771 * var(--u)); }
+  .hero__text { grid-column: 1 / -1; grid-row: 1; }
+  .hero__portrait {
+    grid-column: 2; grid-row: 1;
+    width: calc(538 * var(--u));
+    margin-top: calc(16 * var(--u));
+  }
+}
+
+/* ---------- 6. SECTION 2: ABOUT ME + MY TOOLS ---------- */
+.about { padding-bottom: var(--about-pb); }
+
+.about__box {
+  position: relative;
+  width: var(--content-w);
+  margin-inline: auto;
+  padding: 28px 20px 32px;
+  border: var(--box-border) solid var(--color-accent);
+  border-radius: var(--box-radius);
+  display: grid;
+  gap: 40px;
+}
+.about__heading {
+  font-family: var(--font-display);
+  font-size: var(--fs-title);
+  line-height: 1.2;
+}
+.about__text {
+  margin-top: 16px;
+  font-size: var(--fs-body);
+  line-height: 1.4583;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Tools: each icon is sized by --w / --h (design px). --top nudges the icon down. */
+.tools {
+  margin-top: 32px;
+  display: flex; flex-wrap: wrap;
+  gap: 24px 32px;
+}
+.tool {
+  --top: 0;
+  display: flex; flex-direction: column; align-items: center;
+  width: calc(var(--w) * var(--u));
+  cursor: default;
+}
+.tool--figma   { --w: 76;  --h: 111; --top: 7; }
+.tool--canva   { --w: 95;  --h: 92;  --top: 7; }
+.tool--framer  { --w: 109; --h: 109; }
+.tool--photopea{ --w: 84;  --h: 84; }
+.tool__icon {
+  width: 100%;
+  height: calc(var(--h) * var(--u));
+  margin-top: calc(var(--top) * var(--u));
+  margin-bottom: calc((153 - var(--h) - var(--top)) * var(--u));
+  border-radius: 6px;
+}
+.tool__icon > img { object-fit: contain; }
+.tool__label {
+  font-family: var(--font-display);
+  font-size: var(--fs-body);
+  line-height: 1.667;
+  white-space: nowrap;
+}
+@media (hover: hover) {
+  .tool:hover .tool__icon { animation: bounce .7s var(--ease); }
+}
+@keyframes bounce {
+  0%, 100% { translate: 0 0; }
+  30%      { translate: 0 -14px; }
+  55%      { translate: 0 0; }
+  75%      { translate: 0 -6px; }
+}
+
+@media (min-width: 601px) {
+  .about__box { padding: 36px 32px 40px; gap: 48px; }
+}
+@media (min-width: 1025px) {
+  .about__box {
+    min-height: calc(460 * var(--u));
+    padding: calc(35 * var(--u)) calc(34 * var(--u)) calc(28 * var(--u));
+    grid-template-columns: 658fr 517fr;
+    column-gap: calc(72 * var(--u));
+    row-gap: 0;
+  }
+  .about__heading { font-size: var(--fs-title); }
+  .about__text { margin-top: calc(16 * var(--u)); }
+  .tools {
+    margin-top: calc(77 * var(--u));
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+/* ---------- 7. SECTION 3: WORK ---------- */
+.work {
+  background: var(--color-band);
+  color: var(--color-dark);
+  padding: var(--band-pt) 0 var(--band-pb);
+}
+.work__group + .work__group { margin-top: var(--group-gap); }
+
+.work__heading {
+  width: var(--content-w);
+  margin: 0 auto var(--h2-mb);
+  padding-left: calc(3 * var(--u));
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  line-height: 1.2;
+}
+.work__group:first-child .work__heading { margin-bottom: var(--h2-mb-first); }
+
+.project {
+  width: var(--content-w);
+  margin-inline: auto;
+  padding: var(--card-pt) var(--card-pr) var(--card-pb) var(--card-pl);
+  background: var(--color-card);
+  color: var(--color-text);
+  border-radius: 0 var(--box-radius) 0 var(--box-radius);   /* top-right + bottom-left only, as in Figma */
+}
+.project + .project { margin-top: var(--card-gap); }
+
+.project__head {
+  display: flex; flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  column-gap: 24px; row-gap: 4px;
+}
+.project__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-title);
+  line-height: 1.2;
+}
+.project__meta {
+  font-size: var(--fs-body);
+  line-height: 1.25;
+}
+.project__desc { margin-top: clamp(16px, calc(40 * var(--u)), 40px); line-height: 1.25; }
+.project__label {
+  margin-top: clamp(16px, calc(27 * var(--u)), 27px);
+  font-family: var(--font-display);
+  font-size: var(--fs-label);
+  line-height: 1.2;
+}
+.project__label + .project__text { margin-top: var(--label-gap); }
+.project__text { line-height: 1.25; }
+.project__text + .project__text { margin-top: clamp(14px, calc(27 * var(--u)), 27px); }
+
+@media (min-width: 1025px) {
+  .project__head { flex-wrap: nowrap; }
+  .project__meta { margin-bottom: calc(-5 * var(--u)); text-align: right; white-space: nowrap; }
+  .project--spaced { --label-gap: calc(27 * var(--u)); }
+  .project--social { --gallery-mt: calc(80 * var(--u)); }
+  .project--web    { --gallery-mt: calc(43 * var(--u)); }
+}
+@media (hover: hover) {
+  .project:hover {
+    transform: translateY(calc(-6 * var(--u)));
+    box-shadow: 0 28px 48px -20px rgb(13 13 13 / .55);
+  }
+}
+
+/* ---------- 8. GALLERIES ---------- */
+/* Mobile + tablet: tiles stack, each keeps its own aspect ratio */
+.gallery {
+  margin-top: var(--gallery-mt);
+  display: flex; flex-direction: column;
+  gap: 12px;
+}
+.gallery__col, .gallery__row { display: contents; }
+.gallery--social { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+
+/* Desktop: rebuild the Figma grids. Heights come from design px. */
+@media (min-width: 1025px) {
+  .gallery { display: grid; gap: calc(8 * var(--u)); }
+  .gallery:not(.gallery--social) .media { aspect-ratio: auto; }
+
+  .gallery__col { display: flex; flex-direction: column; gap: calc(12 * var(--u)); min-height: 0; }
+  .gallery__col > .media { flex: var(--h, 1) 1 0px; min-height: 0; }
+
+  /* Burgerdash / Odalys: 3 columns, 549px tall */
+  .gallery--trio { grid-template-columns: repeat(3, 1fr); height: calc(549 * var(--u)); }
+
+  /* pinestudio brand identity: left stack + right (2 across, 1 wide) */
+  .gallery--pine { grid-template-columns: 490fr 747fr; gap: calc(10 * var(--u)); height: calc(557 * var(--u)); }
+  .gallery--pine .gallery__col { gap: calc(10 * var(--u)); }
+  .gallery__row { display: flex; gap: calc(12 * var(--u)); flex: var(--h) 1 0px; min-height: 0; }
+  .gallery__row > .media { flex: var(--w) 1 0px; min-width: 0; }
+
+  /* Social: 3 x 2, tiles touch (gap 0 in Figma) */
+  .gallery--social { grid-template-columns: repeat(3, 1fr); gap: 0; }
+
+  /* Web: laptop left, Instagram post right */
+  .gallery--web { grid-template-columns: 623fr 614fr; gap: calc(7 * var(--u)); height: calc(767 * var(--u)); }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  .gallery--web { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+}
+
+/* ---------- 9. SECTION 4: SAMPLE WORKS ---------- */
+.samples__heading {
+  margin-bottom: var(--samples-mb);
+  font-family: var(--font-display);
+  font-size: var(--fs-h2-xl);
+  line-height: 1.2;
+}
+.samples__grid { display: flex; flex-direction: column; gap: 8px; }
+.samples__col { display: contents; }
+
+@media (min-width: 601px) {
+  .samples__grid { display: block; column-count: 2; column-gap: 8px; }
+  .samples__grid .media { break-inside: avoid; margin-bottom: 8px; }
+}
+@media (min-width: 1025px) {
+  .samples__grid {
+    display: grid;
+    grid-template-columns: 405fr 458fr 458fr;
+    gap: calc(3 * var(--u));
+    height: calc(1387 * var(--u));
+    column-count: auto;
+  }
+  .samples__col { display: flex; flex-direction: column; min-height: 0; }
+  .samples__col > .media { flex: var(--h) 1 0px; min-height: 0; aspect-ratio: auto; margin: 0; }
+}
+
+/* ---------- 10. SECTION 5: GET IN TOUCH ---------- */
+.contact { padding: var(--footer-pt) 0 var(--footer-pb); }
+
+.contact__box {
+  width: var(--content-w);
+  margin-inline: auto;
+  padding: 24px 20px 28px;
+  border: var(--box-border) solid var(--color-accent);
+  border-radius: var(--box-radius);
+}
+.contact__heading {
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: var(--fs-h2-xl);
+  line-height: 1.2;
+}
+.contact__list { font-size: var(--fs-contact); line-height: 1.2; overflow-wrap: anywhere; }
+.contact__list li + li { margin-top: clamp(10px, calc(22 * var(--u)), 22px); }
+.contact__list a {
+  padding-inline: .15em; margin-inline: -.15em;
+  border-radius: 6px;
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-position: from-font;
+  transition: background-color .35s var(--ease), color .35s var(--ease);
+}
+.contact__list a:hover,
+.contact__list a:focus-visible {
+  background: var(--color-accent);
+  color: var(--color-dark);
+}
+
+@media (min-width: 601px) {
+  .contact__box { padding: 32px 32px 36px; }
+}
+@media (min-width: 1025px) {
+  .contact__box {
+    padding: calc(18 * var(--u)) calc(34 * var(--u)) calc(17 * var(--u));
+  }
+  .contact__heading { margin-bottom: calc(7 * var(--u)); }
+}
+
+/* ---------- 11. SCROLL REVEAL + HERO INTRO ----------
+   Hidden states only apply when <html class="js"> is set, so the page
+   still reads fine without JavaScript. */
+.js [data-reveal],
+.js .gallery .media,
+.js .samples__grid .media {
+  opacity: 0;
+  translate: 0 calc(32 * var(--u));
+  transition:
+    opacity .8s var(--ease) var(--reveal-delay, 0s),
+    translate .8s var(--ease) var(--reveal-delay, 0s),
+    transform .35s var(--ease),
+    box-shadow .35s var(--ease);
+}
+.js [data-reveal].is-visible,
+.js .gallery .media.is-visible,
+.js .samples__grid .media.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.js [data-hero] { opacity: 0; translate: 0 calc(40 * var(--u)); }
+.js [data-hero="portrait"] { translate: calc(48 * var(--u)) 0; scale: .94; }
+.js [data-hero="square"] { translate: 0 0; scale: .2; }
+
+.hero-ready [data-hero] {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+  transition:
+    opacity .9s var(--ease) calc(var(--i, 0) * .14s),
+    translate .9s var(--ease) calc(var(--i, 0) * .14s),
+    scale .9s var(--ease) calc(var(--i, 0) * .14s);
+}
+
+/* ---------- 12. REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0s !important;
+  }
+  .js [data-reveal], .js [data-hero],
+  .js .gallery .media, .js .samples__grid .media {
+    opacity: 1; translate: none; scale: 1;
+  }
+}

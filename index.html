@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stephanie Okpe | Creative Designer</title>
+  <meta name="description" content="Portfolio of Stephanie Okpe, a creative designer creating brand identities, social media design and websites.">
+  <meta name="theme-color" content="#0d0d0d">
+
+  <!-- Fonts (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica+SC&family=IM+Fell+French+Canon:ital@0;1&family=Imperial+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Marks JS as available so scroll-reveal hidden states only apply when script.js can reveal them -->
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <!-- =====================================================================
+       SECTION 1: HERO
+       Images to swap: images/hero/portrait.png
+       ===================================================================== -->
+  <header class="hero" id="top">
+    <div class="hero__inner">
+
+      <!-- Decorative accent squares (colours are CSS variables) -->
+      <span class="square square--pink" data-hero="square" aria-hidden="true"></span>
+      <span class="square square--cyan" data-hero="square" aria-hidden="true"></span>
+      <span class="square square--orange" data-hero="square" aria-hidden="true"></span>
+
+      <div class="hero__text">
+        <h1 class="hero__name" data-hero>Stephanie Okpe</h1>
+        <p class="hero__role" data-hero>Creative Designer</p>
+
+        <ul class="tags" data-hero>
+          <li class="tag">Brand/Visual Identity</li>
+          <li class="tag">Social media Design</li>
+          <li class="tag">Web Design</li>
+        </ul>
+
+        <p class="hero__tagline" data-hero>
+          Creating distinctive <span class="font-display">brand identities</span> and <span class="font-display">digital experiences</span> for modern brands.
+        </p>
+      </div>
+
+      <figure class="hero__portrait ph" data-hero="portrait" data-label="images/hero/portrait.png (538 × 489)">
+        <img src="images/portrait.png" alt="Portrait of Stephanie Okpe" width="538" height="489">
+      </figure>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- =====================================================================
+         SECTION 2: ABOUT ME + MY TOOLS
+         Images to swap: images/tools/figma.svg, canva.svg, framer.svg, photopea.svg
+         ===================================================================== -->
+    <section class="about" aria-labelledby="about-title">
+      <div class="about__box" data-reveal>
+        <span class="square square--purple" aria-hidden="true"></span>
+
+        <div class="about__col">
+          <h2 class="about__heading" id="about-title">about me</h2>
+          <p class="about__text">Hi, I’m <em>Stephanie</em>, a creative designer passionate about building thoughtful brand identities and engaging digital experiences. With 2+ years of experience in graphic design, I work across brand, graphic, and UI design, helping businesses and creatives bring their ideas to life through visual storytelling, strategy, and creativity. I approach each project with an eye for colour, typography, and detail, creating designs that feel intentional, communicate clearly, and work seamlessly across digital and physical spaces.</p>
+        </div>
+
+        <div class="about__col">
+          <h2 class="about__heading">my tools</h2>
+          <ul class="tools">
+            <li class="tool tool--figma">
+              <span class="tool__icon ph" data-label="figma.svg"><img src="images/figma.png" alt=""></span>
+              <span class="tool__label">Figma</span>
+            </li>
+            <li class="tool tool--canva">
+              <span class="tool__icon ph" data-label="canva.svg"><img src="images/canva.png" alt=""></span>
+              <span class="tool__label">Canva</span>
+            </li>
+            <li class="tool tool--framer">
+              <span class="tool__icon ph" data-label="framer.svg"><img src="images/framer.png" alt=""></span>
+              <span class="tool__label">framer</span>
+            </li>
+            <li class="tool tool--photopea">
+              <span class="tool__icon ph" data-label="photopea.svg"><img src="images/photopea-1.svg" alt=""></span>
+              <span class="tool__label">photopea</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 3: WORK (full-width coloured band)
+         Images to swap: everything in images/work/
+         ===================================================================== -->
+    <section class="work" id="work" aria-label="Selected work">
+
+      <!-- ---------- 3a. BRAND IDENTITY ---------- -->
+      <div class="work__group">
+        <h2 class="work__heading" data-reveal>brand identity</h2>
+
+        <!-- Burgerdash -->
+        <article class="project" data-reveal>
+          <div class="project__head">
+            <h3 class="project__title">Burgerdash</h3>
+            <p class="project__meta">Fast food brand · Brand Identity</p>
+          </div>
+          <p class="project__desc">BurgerDash is a fun, fast-food burger brand built around speed, energy, and convenience. The goal was to create a bold visual identity that would feel playful and memorable while working across different packaging and brand touchpoints.</p>
+          <p class="project__label">creative direction</p>
+          <p class="project__text"><em>The Decision:</em> The identity combines a bold yellow, red, and green palette with rounded typography, a running burger mascot, and playful graphic elements to create a fun, energetic look across the packaging.</p>
+          <p class="project__text"><em>The Outcome:</em> The result is a playful and cohesive visual identity that brings BurgerDash to life across burger boxes, wrappers, fries packs, takeaway bags, and drink cups.</p>
+
+          <div class="gallery gallery--trio">
+            <div class="gallery__col">
+              <div class="media ph" style="--ar:409/549" data-label="images/work/burgerdash-1.jpg (409 × 549)"><img src="images/burgerdash-1.png" alt="Burgerdash brand identity on packaging" loading="lazy" decoding="async"></div>
+            </div>
+            <div class="gallery__col">
+              <div class="media ph" style="--ar:409/267;--h:267" data-label="images/work/burgerdash-2.jpg (409 × 267)"><img src="images/burgerdash-2.png" alt="Burgerdash brand identity detail" loading="lazy" decoding="async"></div>
+              <div class="media ph" style="--ar:409/267;--h:267" data-label="images/work/burgerdash-3.jpg (409 × 267)"><img src="images/burgerdash-3.png" alt="Burgerdash brand identity detail" loading="lazy" decoding="async"></div>
+            </div>
+            <div class="gallery__col">
+              <div class="media ph" style="--ar:409/195;--h:195" data-label="images/work/burgerdash-4.jpg (409 × 195)"><img src="images/burgerdash-4.png" alt="Burgerdash brand identity detail" loading="lazy" decoding="async"></div>
+              <div class="media ph" style="--ar:409/343;--h:343" data-label="images/work/burgerdash-5.jpg (409 × 343)"><img src="images/burgerdash-5.png" alt="Burgerdash brand identity detail" loading="lazy" decoding="async"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Odalys -->
+        <article class="project" data-reveal>
+          <div class="project__head">
+            <h3 class="project__title">odalys</h3>
+            <p class="project__meta">Activewear brand · Brand Identity</p>
+          </div>
+          <p class="project__desc">Odalys is a minimalist activewear brand created for women who take training seriously but don’t need their clothes to make noise. The goal was to create an identity that felt confident and refined while moving away from the loud visual language common in activewear.</p>
+          <p class="project__label">creative direction</p>
+          <p class="project__text"><em>The Decision:</em> I chose restraint as the main design principle. I kept the colour palette grounded, used clean typography and created a wordmark that could carry the identity without relying on a loud symbol.</p>
+          <p class="project__text"><em>The Outcome:</em> The result is a minimal visual identity built around quiet confidence. The system gives Odalys a distinct presence while allowing the product, fit and craftsmanship to remain the focus.</p>
+
+          <div class="gallery gallery--trio">
+            <div class="gallery__col">
+              <div class="media ph" style="--ar:409/549" data-label="images/work/odalys-1.jpg (409 × 549)"><img src="images/odalys-1.png" alt="Odalys activewear brand identity" loading="lazy" decoding="async"></div>
+            </div>
+            <div class="gallery__col">
+              <div class="media ph" style="--ar:409/267;--h:267" data-label="images/work/odalys-2.jpg (409 × 267)"><img src="images/odalys-2.png" alt="Odalys activewear brand identity detail" loading="lazy" decoding="async"></div>
+              <div class="media ph" style="--ar:409/267;--h:267" data-label="images/work/odalys-3-mailer-box.jpg (409 × 267)"><img src="images/odalys-3.png" alt="Odalys mailer box mockup" loading="lazy" decoding="async"></div>
+            </div>
+            <div class="gallery__col">
+              <div class="media ph" style="--ar:409/549" data-label="images/work/odalys-4.jpg (409 × 549)"><img src="images/odalys-4.png" alt="Odalys activewear brand identity" loading="lazy" decoding="async"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- pinestudio (brand identity) -->
+        <article class="project" data-reveal>
+          <div class="project__head">
+            <h3 class="project__title">pinestudio</h3>
+            <p class="project__meta">Architecture &amp; Interior design brand · Brand Identity</p>
+          </div>
+          <p class="project__desc">PineStudio needed a visual identity that reflects its work in architecture and interior design. The goal was to create a brand that feels established, understated and connected to nature, without looking overly traditional.</p>
+          <p class="project__label">creative direction</p>
+          <p class="project__text"><em>The Decision:</em> I used a deep forest green as the primary brand colour, balanced with warm taupe and off-white. The pine tree became the central brand symbol, incorporated into the wordmark and secondary monogram.</p>
+          <p class="project__text"><em>The Outcome:</em> The result is a distinctive identity built around strong typography and a recognisable symbol. The visual system gives PineStudio a consistent presence across print, physical spaces and digital platforms.</p>
+
+          <div class="gallery gallery--pine">
+            <div class="gallery__col">
+              <div class="media ph" style="--ar:489/220;--h:220" data-label="images/work/pinestudio-primary-logo.jpg (489 × 220)"><img src="images/pinestudio-1.png" alt="PineStudio primary logo" loading="lazy" decoding="async"></div>
+              <div class="media ph" style="--ar:490/327;--h:327" data-label="images/work/pinestudio-storefront.jpg (490 × 327)"><img src="images/pinestudio-3.png" alt="PineStudio storefront mockup" loading="lazy" decoding="async"></div>
+            </div>
+            <div class="gallery__col">
+              <div class="gallery__row" style="--h:302">
+                <div class="media ph" style="--ar:283/302;--w:283" data-label="images/work/pinestudio-wordmark.jpg (283 × 302)"><img src="images/pinestudio-2.png" alt="PineStudio wordmark" loading="lazy" decoding="async"></div>
+                <div class="media ph" style="--ar:453/302;--w:453" data-label="images/work/pinestudio-billboard.jpg (453 × 302)"><img src="images/pinestudio-4.png" alt="PineStudio billboard mockup" loading="lazy" decoding="async"></div>
+              </div>
+              <div class="media ph" style="--ar:747/245;--h:245" data-label="images/work/pinestudio-business-card.jpg (747 × 245)"><img src="images/pinestudio-5.png" alt="PineStudio business card" loading="lazy" decoding="async"></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ---------- 3b. SOCIAL MEDIA DESIGN ---------- -->
+      <div class="work__group">
+        <h2 class="work__heading" data-reveal>Social media design</h2>
+
+        <article class="project project--spaced project--social" data-reveal>
+          <div class="project__head">
+            <h3 class="project__title">Food &amp; Beverage Campaign</h3>
+            <p class="project__meta">Fast food brand · Social media design</p>
+          </div>
+          <p class="project__desc">The goal was to develop a collection of social media designs for BurgerDash, a playful fast-food brand, to showcase its menu, promote offers, and build a recognisable presence across social platforms.</p>
+          <p class="project__label">creative direction</p>
+          <p class="project__text"><em>Design Process:</em> I explored different content themes, including menu highlights, combo offers, product features, and interactive food-related posts. Each design was built around a clear headline, appetising food imagery, and supporting copy. I experimented with typography, image placement, colour blocking, and layout variations to give each post its own personality while maintaining brand consistency.</p>
+          <p class="project__text"><em>Final Design:</em> The final collection features a series of bold, engaging social media graphics that bring BurgerDash’s personality into its digital presence. Each post serves a different purpose, from showcasing products to promoting offers and encouraging audience interaction.</p>
+          <p class="project__text"><em>The Outcome:</em> A cohesive social media design system that gives BurgerDash a distinctive online presence while making its products, promotions, and brand personality instantly recognisable.</p>
+
+          <!-- 3 x 2 grid of equal posts (reading order, left to right) -->
+          <div class="gallery gallery--social">
+            <div class="media ph" style="--ar:414/518" data-label="images/work/social-1.jpg (414 × 518)"><img src="images/social-1.png" alt="BurgerDash social media post 1" loading="lazy" decoding="async"></div>
+            <div class="media ph" style="--ar:414/518" data-label="images/work/social-2.jpg (414 × 518)"><img src="images/social-2.png" alt="BurgerDash social media post 2" loading="lazy" decoding="async"></div>
+            <div class="media ph" style="--ar:414/518" data-label="images/work/social-3.jpg (414 × 518)"><img src="images/social-3.png" alt="BurgerDash social media post 3" loading="lazy" decoding="async"></div>
+            <div class="media ph" style="--ar:414/518" data-label="images/work/social-4.jpg (414 × 518)"><img src="images/social-4.png" alt="BurgerDash social media post 4" loading="lazy" decoding="async"></div>
+            <div class="media ph" style="--ar:414/518" data-label="images/work/social-5.jpg (414 × 518)"><img src="images/social-5.png" alt="BurgerDash social media post 5" loading="lazy" decoding="async"></div>
+            <div class="media ph" style="--ar:414/518" data-label="images/work/social-6.jpg (414 × 518)"><img src="images/social-6.png" alt="BurgerDash social media post 6" loading="lazy" decoding="async"></div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ---------- 3c. WEB DESIGN ---------- -->
+      <div class="work__group">
+        <h2 class="work__heading" data-reveal>web design</h2>
+
+        <!-- pinestudio (web) -->
+        <article class="project project--spaced project--web" data-reveal>
+          <div class="project__head">
+            <h3 class="project__title">pinestudio</h3>
+            <p class="project__meta">Architecture &amp; Interior design brand · Web Design</p>
+          </div>
+          <p class="project__desc">The goal was to design a website for PineStudio, an architecture and interior design brand, to showcase its projects, communicate its services, and establish a strong digital presence.</p>
+          <p class="project__label">creative direction</p>
+          <p class="project__text">The direction combines editorial typography, earthy colours, spacious layouts, and architectural imagery to create a minimal, refined experience that reflects the brand’s design philosophy.</p>
+          <p class="project__text"><em>The Outcome:</em> A clean, visually engaging website that gives PineStudio a professional digital presence while making its work and services easy to explore.</p>
+
+          <div class="gallery gallery--web">
+            <div class="media ph" style="--ar:623/767" data-label="images/work/pinestudio-web-macbook.jpg (623 × 767)"><img src="images/pinestudion-mac.png" alt="PineStudio website shown on a MacBook" loading="lazy" decoding="async"></div>
+            <div class="media ph" style="--ar:614/767" data-label="images/work/pinestudio-web-instagram.jpg (614 × 767)"><img src="images/pinestudion-ig.png" alt="PineStudio Instagram post" loading="lazy" decoding="async"></div>
+          </div>
+        </article>
+
+        <!-- kema interiors (web) -->
+        <article class="project project--spaced project--web" data-reveal>
+          <div class="project__head">
+            <h3 class="project__title">kema interiors</h3>
+            <p class="project__meta">Interior design brand · Web Design</p>
+          </div>
+          <p class="project__desc">The goal was to design a website for Kema Interiors that showcases its interior design projects, highlights its services, and makes it easy for potential clients to explore and enquire.</p>
+          <p class="project__label">creative direction</p>
+          <p class="project__text">The visual direction focuses on a warm, luxurious aesthetic through neutral tones, elegant typography, large interior imagery, and clean layouts. The experience is designed to feel inviting, polished, and effortless to navigate.</p>
+          <p class="project__text"><em>The Outcome:</em> A refined digital experience that showcases Kema Interiors’ design work, communicates its brand personality, and guides visitors towards making an enquiry.</p>
+
+          <div class="gallery gallery--web">
+            <div class="media ph" style="--ar:623/767" data-label="images/work/kema-web-macbook.jpg (623 × 767)"><img src="images/kemainteriors-mac.png" alt="Kema Interiors website shown on a MacBook" loading="lazy" decoding="async"></div>
+            <div class="media ph" style="--ar:614/767" data-label="images/work/kema-web-instagram.jpg (614 × 767)"><img src="images/kemainteriors-ig.png" alt="Kema Interiors Instagram post" loading="lazy" decoding="async"></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 4: SAMPLE WORKS
+         Images to swap: everything in images/samples/
+         ===================================================================== -->
+    <section class="samples" aria-labelledby="samples-title">
+      <div class="container">
+        <h2 class="samples__heading" id="samples-title" data-reveal>sample works</h2>
+
+        <div class="samples__grid">
+          <div class="samples__col">
+            <div class="media ph" style="--ar:405/573;--h:573" data-label="images/samples/sample-1.jpg (405 × 573)"><img src="images/sample-1.png" alt="Sample work" loading="lazy" decoding="async"></div>
+            <div class="media ph" style="--ar:405/814;--h:814" data-label="images/samples/nectar-pop.jpg (405 × 814)"><img src="images/sample-4.png" alt="Nectar Pop design" loading="lazy" decoding="async"></div>
+          </div>
+          <div class="samples__col">
+            <div class="media ph" style="--ar:458/573;--h:573" data-label="images/samples/gleeworld.jpg (458 × 573)"><img src="images/sample-2.png" alt="GLEEWORLD design" loading="lazy" decoding="async"></div>
+            <div class="media ph" style="--ar:458/572;--h:572" data-label="images/samples/vees-catering.jpg (458 × 572)"><img src="images/sample-5.png" alt="Vees Catering Service design" loading="lazy" decoding="async"></div>
+            <div class="media ph" style="--ar:456/240;--h:242" data-label="images/samples/paper-bag-mockup.jpg (456 × 240)"><img src="images/sample-7.png" alt="Paper bag mockup" loading="lazy" decoding="async"></div>
+          </div>
+          <div class="samples__col">
+            <div class="media ph" style="--ar:458/573;--h:573" data-label="images/samples/taste-of-lagos.jpg (458 × 573)"><img src="images/sample-3.png" alt="Taste of Lagos design" loading="lazy" decoding="async"></div>
+            <div class="media ph" style="--ar:458/814;--h:814" data-label="images/samples/logo.jpg (458 × 814)"><img src="images/sample-6.png" alt="Logo design" loading="lazy" decoding="async"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================================
+       SECTION 5: GET IN TOUCH
+       ===================================================================== -->
+  <footer class="contact" id="contact">
+    <div class="contact__box" data-reveal>
+      <h2 class="contact__heading">get in touch.</h2>
+      <ul class="contact__list">
+        <li>Email: <a href="mailto:rufinaokpe@gmail.com">rufinaokpe@gmail.com</a></li>
+        <li>WhatsApp: <a href="https://wa.me/2348087756344" target="_blank" rel="noopener noreferrer">08087756344</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/designedbyru_" target="_blank" rel="noopener noreferrer">designedbyru_</a></li>
+        <li>Linkedin: <a href="https://www.linkedin.com/in/stephanie-okpe-810324281/" target="_blank" rel="noopener noreferrer">Stephanie Okpe</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
